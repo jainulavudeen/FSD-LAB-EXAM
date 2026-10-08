@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Food Ordering Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍔 Online Food Ordering</h1>
+    <p style="text-align:center;margin-bottom:15px"><a href="/employee.html">Go to Employee Management (Q2) →</a></p>
+
+    <form id="orderForm" novalidate>
+      <div class="field">
+        <label for="name">Customer Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <small class="error" id="nameError"></small>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="10-digit mobile number" maxlength="10">
+        <small class="error" id="phoneError"></small>
+      </div>
+
+      <div class="field">
+        <label for="food">Food Item</label>
+        <select id="food">
+          <option value="">-- Select Food Item --</option>
+          <option>Margherita Pizza</option>
+          <option>Veg Burger</option>
+          <option>Chicken Biryani</option>
+          <option>Paneer Butter Masala</option>
+          <option>Masala Dosa</option>
+          <option>Pasta</option>
+        </select>
+        <small class="error" id="foodError"></small>
+      </div>
+
+      <div class="field">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1" max="20" placeholder="1 - 20">
+        <small class="error" id="quantityError"></small>
+      </div>
+
+      <div class="field">
+        <label for="address">Delivery Address</label>
+        <textarea id="address" rows="3" placeholder="House no, street, city, pincode"></textarea>
+        <small class="error" id="addressError"></small>
+      </div>
+
+      <div class="field">
+        <label for="payment">Payment Method</label>
+        <select id="payment">
+          <option value="">-- Select Payment Method --</option>
+          <option>Cash on Delivery</option>
+          <option>UPI</option>
+          <option>Credit / Debit Card</option>
+          <option>Net Banking</option>
+        </select>
+        <small class="error" id="paymentError"></small>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="btn submit">Submit</button>
+        <button type="reset" class="btn reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <div id="confirmation" class="confirmation hidden">
+      <h2>✅ Order Confirmed!</h2>
+      <div id="orderDetails"></div>
+      <button class="btn reset" id="newOrderBtn">Place New Order / Reset Form</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
